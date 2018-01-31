@@ -1,0 +1,27 @@
+version: '2.3'
+volumes:
+  html:
+services:
+  # lsyncd container to sync up host mount and named volume:
+  lsyncd:
+    image: allthings/lsyncd
+    command: -rsync /mnt/html /var/www/html
+    volumes:
+      # The host mount for the shared directory:
+      - ./html:/mnt/html:delegated
+      # The named volume for the shared directory:
+      - html:/var/www/html:nocopy
+  # Sample Apache/PHP web server using a named volume:
+  web:
+    image: php:apache
+    volumes:
+      - html:/var/www/html:nocopy
+    ports:
+      - 80:80
+  # Sample Apache/PHP web server using a host mount:
+  web2:
+    image: php:apache
+    volumes:
+      - ./html:/var/www/html:delegated
+    ports:
+      - 8080:80
