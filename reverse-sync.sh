@@ -23,8 +23,7 @@ sync() {
     --archive \
     --chown=1000 \
     --delete \
-    "$1" \
-    "$2"
+    "$@"
 }
 
 restart() {
@@ -35,4 +34,4 @@ restart() {
 
 trap restart EXIT
 stop
-sync "${1:?}" "${2:?}"
+sync "$@"
