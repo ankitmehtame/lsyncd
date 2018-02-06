@@ -109,7 +109,7 @@ restarts `lsyncd` again.
 It can be used the following way:
 
 ```sh
-./reverse-sync.sh /var/www/html/ /mnt/html/
+./lsyncd-rsync.sh /var/www/html/ /mnt/html/
 ```
 
 Please note that the trailing slashes are required by `rsync`, which is used for

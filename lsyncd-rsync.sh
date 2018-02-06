@@ -4,7 +4,7 @@
 # Script to sync files from the named volume to the host mount.
 # This is a companion script to the ldsync setup, which syncs the other way.
 #
-# Usage: ./reverse-sync.sh /named/volume/path/ /host/mount/path/
+# Usage: ./lsyncd-rsync.sh /named/volume/path/ /host/mount/path/
 #
 # Please note that the trailing slashes are required by `rsync`.
 #
