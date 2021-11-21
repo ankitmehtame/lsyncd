@@ -1,3 +1,6 @@
+# Difference between original and forked
+Added docker images for amd64, arm and arm64
+
 # Lsyncd Dockerfile
 Dockerfile for the [Live Syncing Daemon](https://github.com/axkibe/lsyncd).
 
